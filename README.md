@@ -1,13 +1,36 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Aku Pintar Test API
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Yang Harus Anda Punya
+### 1. Composer
+Jika anda belum memiliki composer dalam laptop/PC anda, anda dapat mendownload serta menginstallnya dari tautan berikut
+> https://getcomposer.org/Composer-Setup.exe 
+atau
+> https://getcomposer.org/download/
+    
+### 2. XAMPP(PHP dan MySQL)
+Jika anda belum memiliki XAMPP dalam laptop/PC anda, anda dapat mendownload serta menginstallnya dari tautan berikut
+> https://www.apachefriends.org/download.html
 
-## About Laravel
+
+## Instalasi
+1. Buka terminal dan clone repo ini :
+> git clone https://github.com/herripurba/AkuPintarTest.git
+
+2. Masuk ke dalam folder project :
+> cd AkuPintarTest
+
+3. Install composer package pada project :
+> composer install
+
+4. Buka XAMPP dan pada modul Apache dan MySQL klik tombol start.
+
+5. Setelah Apache dan MySQL aktif, kemudian klik tombol Admin pada modul MySQL.
+
+6. Setelah phpMyAdmin terbuka, buat database dengan nama yang diinginkan.
+
+7. Duplicate file .env.example dan ubah nama salah satu file menjadi .env
+
+8. Pada file .env ubah pengaturan DB sesuai dengan nama DB yang sudah dibuat, beserta dengan username dan password DB anda.
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
