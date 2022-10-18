@@ -14,13 +14,13 @@ Jika anda belum memiliki XAMPP dalam laptop/PC anda, anda dapat mendownload sert
 
 ## Instalasi
 1. Buka terminal dan clone repo ini :
-> git clone https://github.com/herripurba/AkuPintarTest.git
+    > git clone https://github.com/herripurba/AkuPintarTest.git
 
 2. Masuk ke dalam folder project :
-> cd AkuPintarTest
+    > cd AkuPintarTest
 
 3. Install composer package pada project :
-> composer install
+    > composer install
 
 4. Buka XAMPP dan pada modul Apache dan MySQL klik tombol start.
 
@@ -30,58 +30,42 @@ Jika anda belum memiliki XAMPP dalam laptop/PC anda, anda dapat mendownload sert
 
 7. Duplicate file .env.example dan ubah nama salah satu file menjadi .env
 
-8. Pada file .env ubah pengaturan DB sesuai dengan nama DB yang sudah dibuat, beserta dengan username dan password DB anda.
+8. Pada file .env ubah pengaturan DB sesuai dengan nama DB yang sudah dibuat, beserta dengan username dan password DB anda seperti gambar berikut.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+![alt text](https://github.com/herripurba/AkuPintarTest/blob/main/DB_Setup.jpg?raw=true)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+9. Pada terminal yang sudah mengarah ke folder project, jalankan syntax berikut:
+    > php artisan key:generate
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+10. Jalankan Migrate Beserta Seeder yang sudah dibuat.
+    > php artisan migrate --seed
 
-## Learning Laravel
+11. Jalankan Project
+    > php artisan serve
+ 
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Test API yang sudah dibuat
+Untuk mengetes API yang sudah di buat ada baiknya menggunakan aplikasi Postman atau dapat membukanya URL API secara langsung. Jika anda ingin menggunakan postman, anda dapat menginstallnya pada url berikut:
+> https://www.postman.com/downloads/
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 1. Pencarian Kampus
+Untuk mendapatkan data semua data kampus dapat dilakukan dengan menggunakan URL API berikut
+> http://localhost:8000/api/pencarian-kampus/ atau http://127.0.0.1:8000/api/pencarian-kampus/
 
-## Laravel Sponsors
+Untuk mendapatkan data data kampus sesuai kata kunci pencarian dapat dilakukan dengan menggunakan URL API berikut:
+> http://localhost:8000/api/pencarian-kampus/{search} atau http://127.0.0.1:8000/api/pencarian-kampus/{search}
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+Contoh : http://localhost:8000/api/pencarian-kampus/Institut
 
-### Premium Partners
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+### 2. Mengikuti Kampus
+Untuk mendapatkan data semua data kampus yang diikuti oleh user tersebut dapat dilakukan dengan menggunakan URL API berikut dengan menginputkan id dari user tersebut.
+> http://localhost:8000/api/mengikuti-kampus/{id} atau http://127.0.0.1:8000/api/mengikuti-kampus/{id}
 
-## Contributing
+Contoh : http://localhost:8000/api/mengikuti-kampus/1
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 3. List Jurusan pada Kampus
+Untuk mendapatkan data list jurusan pada sebuah kampus dapat dilakukan dengan menggunakan URL API berikut dengan menginputkan id dari kampus tersebut.
+> http://localhost:8000/api/jurusan-kampus/{id} atau http://127.0.0.1:8000/api/jurusan-kampus/{id}
 
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Contoh : http://localhost:8000/api/jurusan-kampus/1
